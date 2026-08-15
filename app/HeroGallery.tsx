@@ -23,7 +23,6 @@ export default function HeroGallery() {
         <div className="panel-shade"/><div className="media-caption">{slide.label}</div>
       </div>)}
     </div>
-    <div className="hero-title"><span>ROMA XIQŪ CHURCH</span><h1>同心敬拜<br/>共活真道</h1><p>罗马西区华人教会</p></div>
     <button className="gallery-arrow prev" onClick={() => move(-1)} aria-label="上一张"><span>←</span></button><button className="gallery-arrow next" onClick={() => move(1)} aria-label="下一张"><span>→</span></button>
     <div className="gallery-dots">{slides.map((slide,index)=><button key={slide.src} className={active===index?"active":""} onClick={()=>setActive(index)} aria-label={`查看第 ${index+1} 项`}><span>{String(index+1).padStart(2,"0")}</span></button>)}</div>
     <a className="scroll-cue" href="#vision"><i></i><span>SCROLL TO DISCOVER</span></a>

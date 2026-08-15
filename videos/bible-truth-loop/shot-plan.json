@@ -1,0 +1,117 @@
+{
+  "category": "kinetic-type",
+  "duration_s": 10.5,
+  "fps": 30,
+  "canvas": {
+    "w": 1920,
+    "h": 1080,
+    "aspect": "16:9"
+  },
+  "style": "古典、庄重而温暖的新教信仰影像；用户提供的打开《圣经》图片从第一帧起铺满画面，保留深色电影感，以极缓慢的呼吸式推近、掠过书页的柔和金色光带和极轻颗粒营造生命与启示的气息。避免圣像、念珠、弥撒器物及任何天主教礼仪符号。文字克制、居中、具有经文书卷感；结尾的镜头尺度与光线回到首帧状态，形成静音无缝循环。",
+  "palette": [
+    "#080706",
+    "#22160F",
+    "#7C4B27",
+    "#D8B477",
+    "#F4EBDD"
+  ],
+  "font": "Noto Serif SC",
+  "beats": [
+    0,
+    15,
+    72,
+    96,
+    135,
+    149
+  ],
+  "export": "mp4",
+  "asset_needs": [
+    {
+      "role": "hero-opening-frame-and-full-duration-background",
+      "kind": "image",
+      "source": "./bible-first-frame.png",
+      "treatment": "none"
+    }
+  ],
+  "block": "caption-editorial-emphasis",
+  "customize": {
+    "reuse_strategy": "安装并改造 caption-editorial-emphasis，复用其编辑式分行排版、逐词显现和 emphasis word 样式；背景图片的呼吸式镜头、书页暖光扫过、循环回程和细颗粒属于目录组件未覆盖的必要手写层。不得另加任何宗教图标或外部素材。",
+    "hero_asset": "./bible-first-frame.png",
+    "hero_frame": {
+      "frame": 0,
+      "asset_state": "原图全屏 cover，center center，scale 1.0，opacity 1；不叠加新增文字、光带、颗粒或色罩，保证第 0 帧就是用户提供的图片",
+      "safe_text_region": "新增标题放在画面中央偏下的书页区域，但避开原图中央的大号引文和顶部圆形十字标记；第二段采用更小字号并落在原图现有 JOHN 3:16 上方的视觉空隙",
+      "avoid_regions": [
+        "画面中心原图已有的大号中文引文",
+        "画面上中部原图已有的圆形十字符号",
+        "底部书脊与红色书签高对比区域"
+      ]
+    },
+    "text": [
+      {
+        "copy": "圣经，是宝贵的生命之道",
+        "layout": "单行或两段式短行，字重 700，使用 #F4EBDD；‘圣经’和‘生命之道’使用 #D8B477"
+      },
+      {
+        "copy": "其中蕴含真理与救恩的奥秘",
+        "layout": "一行居中，字重 600；‘真理’和‘救恩’使用低饱和金色并仅做一次柔光呼吸"
+      }
+    ],
+    "timing_frames": {
+      "source_only_opening": [0, 14],
+      "first_caption_in_hold_out": [15, 24, 65, 71],
+      "second_caption_in_hold_out": [72, 88, 123, 134],
+      "return_to_exact_source_state": [135, 149]
+    },
+    "background_motion": "帧0 scale=1.0；帧75 scale=1.022 并轻微向书页中心偏移；帧149 scale=1.0、位置与帧0完全一致。使用对称 sine.inOut 曲线，不裁掉圣经主体。",
+    "light_sweep": "使用 #D8B477 的大面积柔光渐变沿书页左下至右中移动，峰值混合透明度不超过 0.16；帧0和帧149透明度均为0，不能形成炫光或圣像光环。",
+    "grain": "极轻、低对比、确定性纹理；帧0和帧149均不可见或使用同一纹理相位，避免循环跳变。",
+    "loop_contract": "所有新增层在帧0和帧149均透明；背景 transform、filter、position 与帧0完全相同。最后一个可见文字在帧134前完成退出，帧135–149只做回归原图的缓冲。",
+    "content_guardrails": [
+      "基督新教语境：圣经、真理、救恩、生命之道",
+      "禁止新增圣母像、圣徒像、念珠、圣体、圣杯、弥撒、祭坛、教宗或天主教礼仪符号",
+      "不把原图现有十字标记扩展成礼仪性或宗派性视觉主题"
+    ],
+    "audio": "none"
+  },
+  "shot_brief": "观众第一帧即看到用户提供的打开《圣经》画面，镜头在五秒内做一次几乎不可察觉的呼吸式推近再回落；暖金色光线沿书页缓慢扫过，细微颗粒保持画面生命感。文字分两次以柔和的模糊消散与字距收拢显现：先落下“圣经，是宝贵的生命之道”，再接续“其中蕴含真理与救恩的奥秘”。唯一主导动作是书页上的启示之光，第二句出现时光线稍亮形成一次克制的节奏转折，随后所有运动和亮度复归首帧，保证循环衔接。",
+  "content": {
+    "scenes": [
+      {
+        "id": "hook-life-word",
+        "start": 0,
+        "end": 2.4,
+        "text": "圣经，是宝贵的生命之道",
+        "emphasis_words": [
+          "圣经",
+          "生命之道"
+        ],
+        "emotion": "敬虔、珍视、安静",
+        "motion": "Hook → Build。帧0–14只显示原始 bible-first-frame.png；帧15起采用 caption-editorial-emphasis 的 fade_blur + word_reveal，标题由轻微虚化和低透明度显现，字距缓慢收拢。背景以 scale 1.0→约1.022开始对称呼吸式推近；暖光从书页左下缓慢掠向中央，不使用十字架图形或宗教器物叠加。帧65后第一句淡出，为下一句让出层级。",
+        "beats": [
+          0,
+          0.5,
+          2.0
+        ]
+      },
+      {
+        "id": "resolve-truth-mystery",
+        "start": 2.4,
+        "end": 5,
+        "text": "其中蕴含真理与救恩的奥秘",
+        "emphasis_words": [
+          "真理",
+          "救恩"
+        ],
+        "emotion": "启示、盼望、庄重",
+        "motion": "Punch → Resolve。帧72开始用 caption-editorial-emphasis 的 word_reveal 显示第二句，书页暖光在帧96附近略增强；‘真理’与‘救恩’只做一次低强度 glow 呼吸，不做夸张放大。帧123后文字 fade_out，帧135–149不显示任何新增层；暖光降至0、确定性颗粒回到相同相位、背景 scale 和位置回到首帧参数，使帧149与帧0视觉一致。",
+        "beats": [
+          2.4,
+          3.2,
+          4.5,
+          4.9667
+        ]
+      }
+    ]
+  }
+}
