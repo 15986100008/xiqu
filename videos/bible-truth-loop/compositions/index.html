@@ -281,277 +281,33 @@
         verseEl.appendChild(span);
       });
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo(
-        "#room-darkness",
-        { autoAlpha: 0.91 },
-        { autoAlpha: 0.46, duration: 2, ease: "sine.inOut" },
-        0,
-      );
-      tl.fromTo(
-        "#candle-awakening",
-        { autoAlpha: 0, scale: 0.35 },
-        { autoAlpha: 0.28, scale: 1, duration: 2, ease: "sine.inOut" },
-        0,
-      );
-      tl.fromTo(
-        "#flame-cover",
-        { autoAlpha: 1, scale: 1.08 },
-        { autoAlpha: 0, scale: 0.65, duration: 2, ease: "sine.inOut" },
-        0,
-      );
-      tl.to(
-        "#candle-awakening",
-        { autoAlpha: 0.16, duration: 2.1, ease: "sine.inOut" },
-        2.05,
-      );
-      tl.to(
-        "#room-darkness",
-        { autoAlpha: 0.06, duration: 2.35, ease: "sine.inOut" },
-        2,
-      );
-      tl.to(
-        "#closed-bible",
-        { scale: 1.006, duration: 0.05, ease: "sine.inOut" },
-        2,
-      );
-      tl.fromTo(
-        "#opening-pages",
-        { autoAlpha: 0, scaleX: 0.12, scaleY: 0.04, y: 70 },
-        {
-          autoAlpha: 0.26,
-          scaleX: 1,
-          scaleY: 1,
-          y: 0,
-          duration: 2.05,
-          ease: "sine.inOut",
-        },
-        2.1,
-      );
-      tl.to(
-        "#closed-bible",
-        {
-          autoAlpha: 0,
-          x: -28,
-          y: 12,
-          rotationZ: 1.2,
-          scale: 0.975,
-          duration: 0.72,
-          ease: "sine.inOut",
-        },
-        2.05,
-      );
-      tl.fromTo(
-        "#opening-45",
-        {
-          autoAlpha: 0,
-          rotationY: 7,
-          rotationZ: -2.8,
-          x: 72,
-          y: 18,
-          scale: 1.035,
-          filter: "brightness(.62) sepia(.1)",
-        },
-        {
-          autoAlpha: 1,
-          rotationY: 2,
-          rotationZ: -1.2,
-          x: 20,
-          y: 6,
-          scale: 1.01,
-          filter: "brightness(.82) sepia(.08)",
-          duration: 0.86,
-          ease: "sine.inOut",
-        },
-        2.18,
-      );
-      tl.to(
-        "#opening-45",
-        {
-          autoAlpha: 0,
-          rotationY: -2,
-          rotationZ: 0,
-          x: -12,
-          y: 0,
-          scale: 0.995,
-          duration: 0.78,
-          ease: "sine.inOut",
-        },
-        3.12,
-      );
-      tl.fromTo(
-        "#opening-75",
-        {
-          autoAlpha: 0,
-          scale: 1.035,
-          x: 46,
-          y: 14,
-          rotationY: 5,
-          rotationZ: -2,
-          filter: "brightness(.66) sepia(.12)",
-        },
-        {
-          autoAlpha: 1,
-          scale: 1.005,
-          x: 0,
-          y: 0,
-          rotationY: 0,
-          rotationZ: 0,
-          filter: "brightness(.9) sepia(.06)",
-          duration: 0.92,
-          ease: "sine.inOut",
-        },
-        3.05,
-      );
-      tl.to(
-        "#opening-75",
-        {
-          autoAlpha: 0,
-          x: -18,
-          scale: 0.995,
-          duration: 0.82,
-          ease: "sine.inOut",
-        },
-        4.02,
-      );
-      tl.fromTo(
-        "#open-bible",
-        {
-          autoAlpha: 0,
-          scale: 1.018,
-          x: -32,
-          y: 8,
-          rotationY: 2,
-          rotationZ: -0.7,
-          filter: "brightness(.72) sepia(.14)",
-        },
-        {
-          autoAlpha: 1,
-          scale: 1,
-          x: -55,
-          y: 0,
-          rotationY: 0,
-          rotationZ: 0,
-          filter: "brightness(.9) sepia(.06)",
-          duration: 0.95,
-          ease: "sine.inOut",
-        },
-        3.92,
-      );
-      tl.to(
-        "#opening-pages",
-        { autoAlpha: 0.1, scaleY: 1.08, duration: 1, ease: "sine.inOut" },
-        4.15,
-      );
-      tl.fromTo(
-        "#gold-light",
-        { autoAlpha: 0, scale: 0.72 },
-        { autoAlpha: 0.35, scale: 1.04, duration: 2, ease: "sine.inOut" },
-        2.15,
-      );
-      tl.fromTo(
-        "#treasure-beam",
-        { autoAlpha: 0, scaleX: 0.15, scaleY: 0.04 },
-        {
-          autoAlpha: 0.42,
-          scaleX: 1,
-          scaleY: 1,
-          duration: 2.1,
-          ease: "sine.inOut",
-        },
-        2.12,
-      );
-      tl.fromTo(
-        "#light-core",
-        { autoAlpha: 0, scaleX: 0.08, scaleY: 0.15 },
-        {
-          scaleX: 1,
-          scaleY: 1,
-          autoAlpha: 0.55,
-          duration: 2,
-          ease: "sine.inOut",
-        },
-        2.18,
-      );
-      tl.fromTo(
-        "#warm-wash",
-        { autoAlpha: 0 },
-        { autoAlpha: 1, duration: 1.5, ease: "sine.inOut" },
-        3.3,
-      );
-      tl.to(
-        "#open-bible",
-        {
-          scale: 1,
-          x: -55,
-          rotationY: 0,
-          rotationZ: 0,
-          filter: "brightness(1) sepia(0)",
-          duration: 2,
-          ease: "sine.inOut",
-        },
-        4.87,
-      );
-      tl.to(
-        "#gold-light",
-        { autoAlpha: 0.18, duration: 1.4, ease: "sine.inOut" },
-        4.7,
-      );
-      tl.to(
-        "#treasure-beam",
-        { autoAlpha: 0.14, scaleY: 0.9, duration: 1.5, ease: "sine.inOut" },
-        4.23,
-      );
-      tl.to(
-        "#light-core",
-        { autoAlpha: 0.16, scale: 0.9, duration: 1.4, ease: "sine.inOut" },
-        4.18,
-      );
-      tl.fromTo(
-        "#verse",
-        { autoAlpha: 0, y: 26, filter: "blur(10px)" },
-        {
-          autoAlpha: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.65,
-          ease: "power3.out",
-        },
-        5.35,
-      );
-      tl.fromTo(
-        "#verse .char",
-        {
-          autoAlpha: 0,
-          x: (index) => ((index % 13) - 6) * 22,
-          y: (index) => -250 - Math.floor(index / 13) * 18,
-          scale: 0.34,
-          rotationX: -68,
-          filter: "blur(9px)",
-        },
-        {
-          autoAlpha: 1,
-          x: 0,
-          y: 0,
-          scale: 1,
-          rotationX: 0,
-          filter: "blur(0px)",
-          duration: 0.56,
-          stagger: 0.085,
-          ease: "back.out(1.75)",
-        },
-        5.15,
-      );
-      tl.fromTo(
-        "#reference",
-        { autoAlpha: 0, y: 10 },
-        { autoAlpha: 1, y: 0, duration: 0.7, ease: "power2.out" },
-        8.65,
-      );
-      tl.to(
-        "#gold-light",
-        { autoAlpha: 0.18, duration: 1.1, ease: "sine.inOut" },
-        8.2,
-      );
+      tl.fromTo("#room-darkness", { autoAlpha: .91 }, { autoAlpha: .48, duration: 2, ease: "sine.inOut" }, 0);
+      tl.fromTo("#candle-awakening", { autoAlpha: 0, scale: .35 }, { autoAlpha: .25, scale: 1, duration: 2, ease: "sine.inOut" }, 0);
+      tl.fromTo("#flame-cover", { autoAlpha: 1, scale: 1.08 }, { autoAlpha: 0, scale: .65, duration: 2, ease: "sine.inOut" }, 0);
+
+      /* One continuous book move: slow anticipation, opening arc, centered settle. */
+      tl.to("#closed-bible", { scale: 1.035, x: 18, y: -8, rotationZ: -.35, duration: 1.25, ease: "power2.inOut" }, 1.75);
+      tl.to("#room-darkness", { autoAlpha: .07, duration: 3.1, ease: "sine.inOut" }, 2);
+      tl.fromTo("#opening-pages", { autoAlpha: 0, scaleX: .08, scaleY: .03, y: 72 }, { autoAlpha: .28, scaleX: 1, scaleY: 1, y: 0, duration: 2.8, ease: "power2.inOut" }, 2.15);
+      tl.to("#closed-bible", { autoAlpha: 0, x: -25, y: 9, rotationZ: .8, scale: .98, duration: .9, ease: "power2.inOut" }, 3);
+      tl.fromTo("#opening-45", { autoAlpha: 0, rotationY: 8, rotationZ: -2.8, x: 76, y: 18, scale: 1.04, filter: "brightness(.6) sepia(.12)" }, { autoAlpha: 1, rotationY: 1, rotationZ: -1, x: 18, y: 5, scale: 1.01, filter: "brightness(.84) sepia(.08)", duration: 1.7, ease: "power2.inOut" }, 2.3);
+      tl.to("#opening-45", { autoAlpha: 0, rotationY: -2, rotationZ: 0, x: -10, y: 0, scale: 1, duration: .3, ease: "power2.inOut" }, 3.86);
+      tl.fromTo("#opening-75", { autoAlpha: 0, scale: 1.035, x: 46, y: 14, rotationY: 5, rotationZ: -2, filter: "brightness(.66) sepia(.12)" }, { autoAlpha: 1, scale: 1.005, x: 0, y: 0, rotationY: 0, rotationZ: 0, filter: "brightness(.92) sepia(.05)", duration: .9, ease: "power2.inOut" }, 3.25);
+      tl.to("#opening-75", { autoAlpha: 0, x: -14, scale: 1, duration: .7, ease: "power2.inOut" }, 4.95);
+      tl.fromTo("#open-bible", { autoAlpha: 0, scale: 1.025, x: 28, y: 8, rotationY: 2, rotationZ: -.7, filter: "brightness(.72) sepia(.14)" }, { autoAlpha: 1, scale: 1, x: 0, y: 0, rotationY: 0, rotationZ: 0, filter: "brightness(1) sepia(0)", duration: 1.25, ease: "power2.inOut" }, 4.72);
+
+      /* Light is concealed while shut, then leaks and blooms with the opening angle. */
+      tl.fromTo("#gold-light", { autoAlpha: 0, scale: .72 }, { autoAlpha: .34, scale: 1.04, duration: 2.8, ease: "power2.inOut" }, 2.35);
+      tl.fromTo("#treasure-beam", { autoAlpha: 0, scaleX: .08, scaleY: .025 }, { autoAlpha: .44, scaleX: 1, scaleY: 1, duration: 2.75, ease: "power2.inOut" }, 2.35);
+      tl.fromTo("#light-core", { autoAlpha: 0, scaleX: .05, scaleY: .1 }, { autoAlpha: .58, scaleX: 1, scaleY: 1, duration: 2.55, ease: "power2.inOut" }, 2.45);
+      tl.fromTo("#warm-wash", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1.8, ease: "sine.inOut" }, 3.75);
+      tl.to("#treasure-beam", { autoAlpha: .14, scaleY: .9, duration: 1.5, ease: "sine.inOut" }, 5.1);
+      tl.to("#light-core", { autoAlpha: .16, scale: .9, duration: 1.5, ease: "sine.inOut" }, 5.05);
+
+      /* The verse rises from the printed page and resolves one character at a time. */
+      tl.fromTo("#verse", { autoAlpha: 0, y: 18, filter: "blur(7px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: .72, ease: "power3.out" }, 5.85);
+      tl.fromTo("#verse .char", { autoAlpha: 0, x: (index) => ((index % 13) - 6) * 7, y: (index) => -128 - Math.floor(index / 13) * 8, scale: .58, rotationX: -42, filter: "blur(6px)" }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationX: 0, filter: "blur(0px)", duration: .68, stagger: .072, ease: "power3.out" }, 5.65);
+      tl.fromTo("#reference", { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: .7, ease: "power2.out" }, 8.8);
       window.__timelines["bible-opening"] = tl;
       tl.seek(0);
     </script>

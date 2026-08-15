@@ -25,3 +25,17 @@ footer{background:#050505;padding:100px 6vw 36px}.footer-logo{display:flex;align
 /* Light editorial homepage: all imagery lives in the hero gallery */
 .home{background:#f4f2ed;color:#151515}.home-intro{min-height:72vh;padding:140px 8vw 110px;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid #d8d4cc}.home-intro small,.home .services-title small{font-size:10px;font-weight:800;letter-spacing:.42em;color:#8b877f}.home-intro h2{font-size:clamp(58px,8.2vw,128px);font-weight:900;font-style:italic;letter-spacing:-.08em;line-height:.92;margin:30px 0}.home-intro p{max-width:650px;color:#6f6b65;line-height:2}.home-intro>div{display:flex;gap:32px;margin-top:36px}.home-intro a{font-size:11px;font-weight:800;letter-spacing:.16em;padding-bottom:8px;border-bottom:1px solid #151515}.home .services{background:#f4f2ed;color:#151515;min-height:auto;padding:120px 6vw}.home .services-title{margin-bottom:74px}.home .services-title h2{font-style:italic}.home .service-strip{height:auto;min-height:0;grid-template-columns:repeat(3,1fr);border-top:1px solid #cbc7bf}.home .service-strip>a{min-height:245px;padding:28px 24px;border-right:0;border-bottom:1px solid #cbc7bf;justify-content:flex-end;transition:.4s cubic-bezier(.2,.8,.2,1)}.home .service-strip>a:nth-child(3n+2){border-left:1px solid #cbc7bf;border-right:1px solid #cbc7bf}.home .service-strip>a:after{display:none}.home .service-strip>a:hover{background:#ebe7df;padding-left:36px}.home .service-strip span{top:28px;color:#918d85}.home .service-strip h3{font-size:26px;z-index:1}.home .service-strip small{color:#77736d;z-index:1}.home .service-strip>a>b{position:absolute;right:24px;top:26px;font-size:18px;font-weight:400}.home footer{background:#efede7;color:#151515}.home .footer-bottom{border-color:#cfcbc3;color:#77736d}
 @media(max-width:900px){.home-intro{padding:110px 24px 80px;min-height:65vh}.home-intro h2{font-size:58px}.home .services{padding:88px 20px}.home .service-strip{grid-template-columns:1fr}.home .service-strip>a,.home .service-strip>a:nth-child(3n+2){border-left:0;border-right:0;min-height:190px}.home .service-strip>a:hover{padding-left:24px}}
+
+/* Representative ministry photography */
+.home .service-strip{gap:22px;border-top:1px solid #cbc7bf;padding-top:22px}
+.home .service-strip>a{min-height:420px;padding:26px;isolation:isolate;border:0!important;border-radius:3px;box-shadow:0 18px 45px rgba(40,31,18,.08);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.home .service-strip>a:after{display:block;z-index:-1;background:linear-gradient(0deg,rgba(8,7,5,.9),rgba(8,7,5,.26) 56%,rgba(8,7,5,.03) 80%)}
+.home .service-strip img{z-index:-2;filter:saturate(.72) brightness(.84);transform:scale(1.015);transition:transform .9s cubic-bezier(.16,1,.3,1),filter .7s}
+.home .service-strip>a:hover{padding-left:26px;background:transparent;transform:translateY(-8px)}
+.home .service-strip>a:hover img{filter:saturate(1) brightness(.92);transform:scale(1.075)}
+.home .service-strip span{top:26px;color:rgba(255,255,255,.8)}
+.home .service-strip .service-copy{position:relative;z-index:2}
+.home .service-strip h3{font-size:29px;color:#fff;margin:0 0 9px}
+.home .service-strip small{color:rgba(255,255,255,.68)}
+.home .service-strip>a>b{z-index:2;right:24px;top:24px;color:#fff}
+@media(max-width:900px){.home .service-strip{gap:14px}.home .service-strip>a{min-height:330px}}
