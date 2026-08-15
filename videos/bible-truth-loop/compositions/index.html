@@ -236,6 +236,35 @@
         letter-spacing: 0.42em;
         opacity: 0;
       }
+      #final-atmosphere {
+        position: absolute;
+        z-index: 12;
+        inset: 0;
+        opacity: 0;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at 50% 48%,rgba(221,174,92,.13),rgba(0,0,0,.34) 58%,rgba(0,0,0,.62));
+        pointer-events: none;
+      }
+      #final-title {
+        color: #fff9ea;
+        font-size: 76px;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-indent: .12em;
+        text-shadow: 0 4px 30px rgba(0,0,0,.9),0 0 38px rgba(238,194,111,.34);
+        opacity: 0;
+      }
+      .star {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        opacity: 0;
+        background: #fff0b9;
+        clip-path: polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);
+        filter: blur(.35px) drop-shadow(0 0 12px rgba(255,214,128,.9));
+      }
+      .star.s1{left:24%;top:32%}.star.s2{left:35%;top:67%;transform:scale(.55)}.star.s3{left:70%;top:29%;transform:scale(.7)}.star.s4{left:77%;top:63%;transform:scale(.45)}.star.s5{left:56%;top:23%;transform:scale(.4)}.star.s6{left:19%;top:58%;transform:scale(.35)}
       #vignette {
         position: absolute;
         inset: 0;
@@ -249,8 +278,8 @@
     </style>
   </head>
   <body>
-    <div data-hf-id="hf-g04f" id="stage" data-composition-id="bible-opening" data-start="0" data-duration="10.5" data-fps="30" data-width="1920" data-height="1080">
-      <div data-hf-id="hf-obbp" id="visual" class="clip" data-start="0" data-duration="10.5" data-track-index="0">
+    <div data-hf-id="hf-g04f" id="stage" data-composition-id="bible-opening" data-start="0" data-duration="14.5" data-fps="60" data-width="1920" data-height="1080">
+      <div data-hf-id="hf-obbp" id="visual" class="clip" data-start="0" data-duration="14.5" data-track-index="0">
         <img data-hf-id="hf-65s9" id="closed-bible" class="frame" src="assets/closed-bible-candle.png" alt="烛光旁合上的圣经" data-layout-allow-overflow="true"><img data-hf-id="hf-open45" id="opening-45" class="frame" src="assets/bible-opening-45.png" alt="正在缓慢打开的圣经" data-layout-allow-overflow="true"><img data-hf-id="hf-open75" id="opening-75" class="frame" src="assets/bible-opening-75.png" alt="接近完全打开的圣经" data-layout-allow-overflow="true"><img data-hf-id="hf-4527" id="open-bible" class="frame" src="assets/bible-first-frame.png" alt="打开的圣经" data-layout-allow-overflow="true">
         <div data-hf-id="hf-pz7x" id="opening-pages" aria-hidden="true"></div>
         <div data-hf-id="hf-1uuu" id="gold-light" aria-hidden="true" data-layout-allow-overflow="true"></div>
@@ -263,6 +292,7 @@
         <div data-hf-id="hf-6yq5" id="room-darkness" aria-hidden="true"></div>
         <div data-hf-id="hf-o3ah" id="candle-awakening" aria-hidden="true"></div>
         <div data-hf-id="hf-4h4l" id="flame-cover" aria-hidden="true"></div>
+        <div data-hf-id="hf-final" id="final-atmosphere" aria-hidden="true"><span class="star s1"></span><span class="star s2"></span><span class="star s3"></span><span class="star s4"></span><span class="star s5"></span><span class="star s6"></span><div id="final-title">罗马西区欢迎您</div></div>
       </div>
     </div>
     <script>
@@ -286,28 +316,35 @@
       tl.fromTo("#flame-cover", { autoAlpha: 1, scale: 1.08 }, { autoAlpha: 0, scale: .65, duration: 2, ease: "sine.inOut" }, 0);
 
       /* One continuous book move: slow anticipation, opening arc, centered settle. */
-      tl.to("#closed-bible", { scale: 1.035, x: 18, y: -8, rotationZ: -.35, duration: 1.25, ease: "power2.inOut" }, 1.75);
-      tl.to("#room-darkness", { autoAlpha: .07, duration: 3.1, ease: "sine.inOut" }, 2);
-      tl.fromTo("#opening-pages", { autoAlpha: 0, scaleX: .08, scaleY: .03, y: 72 }, { autoAlpha: .28, scaleX: 1, scaleY: 1, y: 0, duration: 2.8, ease: "power2.inOut" }, 2.15);
-      tl.to("#closed-bible", { autoAlpha: 0, x: -25, y: 9, rotationZ: .8, scale: .98, duration: .9, ease: "power2.inOut" }, 3);
-      tl.fromTo("#opening-45", { autoAlpha: 0, rotationY: 8, rotationZ: -2.8, x: 76, y: 18, scale: 1.04, filter: "brightness(.6) sepia(.12)" }, { autoAlpha: 1, rotationY: 1, rotationZ: -1, x: 18, y: 5, scale: 1.01, filter: "brightness(.84) sepia(.08)", duration: 1.7, ease: "power2.inOut" }, 2.3);
-      tl.to("#opening-45", { autoAlpha: 0, rotationY: -2, rotationZ: 0, x: -10, y: 0, scale: 1, duration: .3, ease: "power2.inOut" }, 3.86);
-      tl.fromTo("#opening-75", { autoAlpha: 0, scale: 1.035, x: 46, y: 14, rotationY: 5, rotationZ: -2, filter: "brightness(.66) sepia(.12)" }, { autoAlpha: 1, scale: 1.005, x: 0, y: 0, rotationY: 0, rotationZ: 0, filter: "brightness(.92) sepia(.05)", duration: .9, ease: "power2.inOut" }, 3.25);
-      tl.to("#opening-75", { autoAlpha: 0, x: -14, scale: 1, duration: .7, ease: "power2.inOut" }, 4.95);
-      tl.fromTo("#open-bible", { autoAlpha: 0, scale: 1.025, x: 28, y: 8, rotationY: 2, rotationZ: -.7, filter: "brightness(.72) sepia(.14)" }, { autoAlpha: 1, scale: 1, x: 0, y: 0, rotationY: 0, rotationZ: 0, filter: "brightness(1) sepia(0)", duration: 1.25, ease: "power2.inOut" }, 4.72);
+      tl.to("#closed-bible", { scale: 1.055, x: 22, y: -12, rotationZ: -.45, duration: 1.65, ease: "sine.inOut" }, 1.75);
+      tl.to("#room-darkness", { autoAlpha: .07, duration: 4.2, ease: "sine.inOut" }, 2);
+      tl.fromTo("#opening-pages", { autoAlpha: 0, scaleX: .05, scaleY: .02, y: 78 }, { autoAlpha: .3, scaleX: 1.08, scaleY: 1.08, y: -6, duration: 3.35, ease: "sine.inOut" }, 2.75);
+      tl.to("#closed-bible", { autoAlpha: 0, x: -26, y: 10, rotationZ: .9, scale: .985, duration: 1.2, ease: "sine.inOut" }, 3.4);
+      tl.fromTo("#opening-45", { autoAlpha: 0, rotationY: 9, rotationZ: -3.2, x: 88, y: 22, scale: 1.055, filter: "brightness(.58) sepia(.14)" }, { autoAlpha: 1, rotationY: 1, rotationZ: -1, x: 14, y: 4, scale: 1.012, filter: "brightness(.86) sepia(.08)", duration: 1.45, ease: "sine.inOut" }, 2.9);
+      tl.to("#opening-45", { autoAlpha: 0, rotationY: -2, rotationZ: 0, x: -8, y: 0, scale: 1, duration: .5, ease: "sine.inOut" }, 4.35);
+      tl.fromTo("#opening-75", { autoAlpha: 0, scale: 1.045, x: 58, y: 16, rotationY: 6, rotationZ: -2.2, filter: "brightness(.65) sepia(.13)" }, { autoAlpha: 1, scale: 1.006, x: 0, y: 0, rotationY: 0, rotationZ: 0, filter: "brightness(.94) sepia(.04)", duration: 1.2, ease: "sine.inOut" }, 4.35);
+      tl.to("#opening-75", { autoAlpha: 0, x: -12, scale: 1, duration: .75, ease: "sine.inOut" }, 5.7);
+      tl.fromTo("#open-bible", { autoAlpha: 0, scale: 1.035, x: 34, y: 10, rotationY: 2.4, rotationZ: -.8, filter: "brightness(.7) sepia(.15)" }, { autoAlpha: 1, scale: 1, x: 0, y: 0, rotationY: 0, rotationZ: 0, filter: "brightness(1) sepia(0)", duration: 1.45, ease: "sine.inOut" }, 5.45);
 
       /* Light is concealed while shut, then leaks and blooms with the opening angle. */
-      tl.fromTo("#gold-light", { autoAlpha: 0, scale: .72 }, { autoAlpha: .34, scale: 1.04, duration: 2.8, ease: "power2.inOut" }, 2.35);
-      tl.fromTo("#treasure-beam", { autoAlpha: 0, scaleX: .08, scaleY: .025 }, { autoAlpha: .44, scaleX: 1, scaleY: 1, duration: 2.75, ease: "power2.inOut" }, 2.35);
-      tl.fromTo("#light-core", { autoAlpha: 0, scaleX: .05, scaleY: .1 }, { autoAlpha: .58, scaleX: 1, scaleY: 1, duration: 2.55, ease: "power2.inOut" }, 2.45);
-      tl.fromTo("#warm-wash", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1.8, ease: "sine.inOut" }, 3.75);
-      tl.to("#treasure-beam", { autoAlpha: .14, scaleY: .9, duration: 1.5, ease: "sine.inOut" }, 5.1);
-      tl.to("#light-core", { autoAlpha: .16, scale: .9, duration: 1.5, ease: "sine.inOut" }, 5.05);
+      tl.fromTo("#gold-light", { autoAlpha: 0, scale: .62 }, { autoAlpha: .42, scale: 1.12, duration: 3.5, ease: "sine.inOut" }, 2.85);
+      tl.fromTo("#treasure-beam", { autoAlpha: 0, scaleX: .04, scaleY: .015 }, { autoAlpha: .56, scaleX: 1.12, scaleY: 1.12, duration: 3.4, ease: "sine.inOut" }, 2.85);
+      tl.fromTo("#light-core", { autoAlpha: 0, scaleX: .03, scaleY: .06 }, { autoAlpha: .7, scaleX: 1.08, scaleY: 1.08, duration: 3.2, ease: "sine.inOut" }, 2.95);
+      tl.fromTo("#warm-wash", { autoAlpha: 0 }, { autoAlpha: 1, duration: 2.2, ease: "sine.inOut" }, 4.35);
+      tl.to("#treasure-beam", { autoAlpha: .14, scaleY: .92, duration: 1.5, ease: "sine.inOut" }, 6.25);
+      tl.to("#light-core", { autoAlpha: .16, scale: .92, duration: 1.5, ease: "sine.inOut" }, 6.15);
 
       /* The verse rises from the printed page and resolves one character at a time. */
-      tl.fromTo("#verse", { autoAlpha: 0, y: 18, filter: "blur(7px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: .72, ease: "power3.out" }, 5.85);
-      tl.fromTo("#verse .char", { autoAlpha: 0, x: (index) => ((index % 13) - 6) * 7, y: (index) => -128 - Math.floor(index / 13) * 8, scale: .58, rotationX: -42, filter: "blur(6px)" }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationX: 0, filter: "blur(0px)", duration: .68, stagger: .072, ease: "power3.out" }, 5.65);
-      tl.fromTo("#reference", { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: .7, ease: "power2.out" }, 8.8);
+      tl.fromTo("#verse", { autoAlpha: 0, y: 18, filter: "blur(7px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: .72, ease: "power3.out" }, 7.35);
+      tl.fromTo("#verse .char", { autoAlpha: 0, x: (index) => ((index % 13) - 6) * 7, y: (index) => -128 - Math.floor(index / 13) * 8, scale: .58, rotationX: -42, filter: "blur(6px)" }, { autoAlpha: 1, x: 0, y: 0, scale: 1, rotationX: 0, filter: "blur(0px)", duration: .68, stagger: .072, ease: "power3.out" }, 7.15);
+      tl.fromTo("#reference", { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: .7, ease: "power2.out" }, 10.15);
+
+      /* Final invitation: the scripture remains, then the Bible softens into atmosphere. */
+      tl.to("#verse, #reference", { autoAlpha: 0, y: -10, duration: .65, ease: "sine.inOut" }, 11.15);
+      tl.to("#open-bible", { autoAlpha: .5, scale: 1.025, filter: "brightness(.56) blur(10px) sepia(.08)", duration: 1.7, ease: "sine.inOut" }, 11.05);
+      tl.fromTo("#final-atmosphere", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1.4, ease: "sine.inOut" }, 11.15);
+      tl.fromTo("#final-title", { autoAlpha: 0, y: 26, scale: .96, filter: "blur(12px)" }, { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 1.35, ease: "power3.out" }, 11.65);
+      tl.fromTo(".star", { autoAlpha: 0, scale: .2, rotationZ: -20 }, { autoAlpha: .72, scale: 1, rotationZ: 0, duration: 1.1, stagger: .13, ease: "sine.out" }, 11.9);
       window.__timelines["bible-opening"] = tl;
       tl.seek(0);
     </script>
