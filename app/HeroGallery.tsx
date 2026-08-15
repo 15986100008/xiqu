@@ -11,6 +11,8 @@ const slides = [
   { type: "image", src: "https://img1.wsimg.com/isteam/ip/5a0ed821-db31-48af-a6bc-0f030e8c7e88/Unknown-8.jpeg/:/rs=w:1800", label: "恩典之路 · WALK IN GRACE" },
 ];
 
+const john316 = "神爱世人，甚至将他的独生子赐给他们，叫一切信他的，不至灭亡，反得永生。";
+
 export default function HeroGallery() {
   const [active, setActive] = useState(0);
   const touchStart = useRef(0);
@@ -20,7 +22,12 @@ export default function HeroGallery() {
     <div className="gallery-track" style={{ transform: `translateX(-${active * 100}%)` }}>
       {slides.map((slide, index) => <div className="gallery-slide" key={slide.src} aria-hidden={active !== index}>
         {slide.type === "video" ? <video autoPlay muted playsInline preload="auto" poster="/bible-first-frame.png"><source src={slide.src} type="video/mp4" /></video> : <img src={slide.src} alt={slide.label.split("·")[0].trim()} />}
-        <div className="panel-shade"/><div className="media-caption">{slide.label}</div>
+        <div className="panel-shade"/>
+        {slide.type === "video" && active === index ? <div className="hero-scripture" aria-label={`${john316} — John 3:16`}>
+          <p>{john316.split("").map((character, characterIndex) => <span key={`${character}-${characterIndex}`} style={{ animationDelay: `${3.35 + characterIndex * 0.055}s` }}>{character}</span>)}</p>
+          <small>— JOHN 3:16</small>
+        </div> : null}
+        <div className="media-caption">{slide.label}</div>
       </div>)}
     </div>
     <button className="gallery-arrow prev" onClick={() => move(-1)} aria-label="上一张"><span>←</span></button><button className="gallery-arrow next" onClick={() => move(1)} aria-label="下一张"><span>→</span></button>
