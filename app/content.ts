@@ -18,7 +18,7 @@ export const pages: PageContent[] = [
     { title: "下午堂崇拜", meta: "主日 15:40–17:30", body: "司会：黄恩慧弟兄 · 司琴：郑思媛姊妹 · 敬拜：约娇、丹琴、蔡思思、祝浪、恩慧" },
     { title: "祷告会", meta: "每周五 15:00–17:00", body: "为教会、家庭、城市与世界同心祷告，也欢迎带着您的需要来到神面前。" },
   ]},
-  { slug: "中文学校", title: "罗马西区中文学校", eyebrow: "CHINESE SCHOOL", intro: "把孩子带到有真理的学校，让语言、文化与品格一同成长。", image: "https://img1.wsimg.com/isteam/ip/5a0ed821-db31-48af-a6bc-0f030e8c7e88/martini%20-%20Image-11-01.jpg/:/rs=w:1400", sections: [
+  { slug: "中文学校", title: "罗马西区中文学校", eyebrow: "CHINESE SCHOOL", intro: "把孩子带到有真理的学校，让语言、文化与品格一同成长。", image: "/chinese-school.png", sections: [
     { title: "语文课程", body: "教材同步国内人教版，注重听、说、读、写的系统训练，帮助孩子建立扎实的中文基础。" },
     { title: "艺术与体育", body: "课程包括美术、音乐、舞蹈、游泳、乒乓球与户外活动，鼓励孩子发现兴趣、锤炼意志。" },
     { title: "招生与加入", body: "面向罗马及周边家庭招生。欢迎家长联系教务处，了解班级、上课时间与报名安排。" },
